@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_servers>
+	<component_server>
+		<app_id>Admin</app_id>
+		<servers>
+			<server>172.16.3.9:10000</server>
+		</servers>
+	</component_server>
+	<component_server>
+		<app_id>System</app_id>
+		<servers>
+			<server>10.1.2.1:10001</server>
+		</servers>
+	</component_server>
+	<component_server>
+		<app_id>Weixin</app_id>
+		<servers>
+			<server>127.0.0.1:10233</server>
+		</servers>
+	</component_server>
+</component_servers>

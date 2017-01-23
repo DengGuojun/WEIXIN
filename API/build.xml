@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="package" name="weixin_api">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="dist.classes" value="build/classes" />
+	<property name="dist.dir" value="build/dist" />
+	<property name="dist.version" value="0.1.0" />
+	<path id="weixin_api.classpath">
+		<pathelement location="${dist.classes}" />
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<target name="init" depends="cleanall">
+		<mkdir dir="${dist.classes}" />
+		<mkdir dir="${dist.dir}" />
+		<copy includeemptydirs="false" todir="${dist.classes}">
+			<fileset dir="src">
+				<exclude name="**/*.launch" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="${dist.classes}" />
+	</target>
+	<target depends="clean" name="cleanall" />
+	<target depends="build-subprojects,build-project" name="build" />
+	<target name="build-subprojects" />
+	<target depends="init" name="build-project">
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${dist.classes}" encoding="utf-8" includeantruntime="on">
+			<src path="src" />
+			<exclude name="**/test/**" />
+			<classpath refid="weixin_api.classpath" />
+		</javac>
+	</target>
+	<target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" />
+	<target depends="build" name="package">
+		<jar destfile="${dist.dir}/lpmas-weixin-api-${dist.version}.jar" basedir="${dist.classes}" includes="**/*.class" excludes="/test/**.class" />
+	</target>
+</project>

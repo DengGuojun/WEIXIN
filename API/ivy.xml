@@ -1,0 +1,32 @@
+<ivy-module version="1.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"            
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+    <info organisation="lpmas" module="integration"/>
+
+	<configurations>
+		<include file="../IVY_LIB/default-ivy-configurations.xml"/> 
+	</configurations>
+     
+	<dependencies>		
+		<dependency org="apache" name="commons-logging" rev="1.2" transitive="false"/>
+		<dependency org="apache" name="httpclient" rev="4.5.1" transitive="false"/>
+		<dependency org="apache" name="httpcore" rev="4.4.4" transitive="false"/>
+		<dependency org="apache" name="httpmime" rev="4.4.1" transitive="false"/>
+		
+		<dependency org="apache" name="log4j-api" rev="2.4.1" transitive="false"/>
+		<dependency org="apache" name="log4j-core" rev="2.4.1" transitive="false"/>
+		<dependency org="apache" name="log4j-slf4j-impl" rev="2.4.1" transitive="false"/>
+		<dependency org="slf4j" name="slf4j-api" rev="1.7.12" transitive="false"/>
+
+		<dependency org="dom4j" name="dom4j" rev="2.0.0" transitive="false"/>
+		<dependency org="fastxml" name="jackson-core" rev="2.7.0" transitive="false"/>
+		<dependency org="fastxml" name="jackson-annotations" rev="2.7.0" transitive="false"/>
+		<dependency org="fastxml" name="jackson-databind" rev="2.7.0" transitive="false"/>
+		<dependency org="fastxml" name="jackson-dataformat-xml" rev="2.7.0" transitive="false"/>
+		<dependency org="fastxml" name="jackson-module-jaxb-annotations" rev="2.7.0" transitive="false"/>
+		<dependency org="codehaus" name="stax2-api" rev="4.0.0" transitive="false"/>
+		
+		<dependency org="lpmas" name="lpmas-framework" rev="1.0.1" transitive="false"/>
+	</dependencies>
+        
+</ivy-module>		

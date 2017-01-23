@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+
+<project name="SFHN" default="${client.jar}" basedir=".">
+
+	<!-- dir/file define -->
+	<property name="build.dir" value="WebContent/WEB-INF/classes/"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="client.jar" value="lpmas-weixin-client-0.1.0.jar"/>
+
+	<target name="prepare">
+		<mkdir dir="${dist.dir}"/>
+		<delete>
+			<fileset dir="${dist.dir}">
+				<include name="${dist.jar}"/>
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="${client.jar}" depends="prepare">
+		<jar jarfile="${dist.dir}/${client.jar}">
+			<fileset dir="${build.dir}" >
+				<include name="com/lpmas/weixin/client/**"/>
+				<include name="com/lpmas/weixin/client/bean/request/**"/>
+				<include name="com/lpmas/weixin/client/business/**"/>
+				<include name="com/lpmas/weixin/client/config/**"/>
+				<include name="com/lpmas/weixin/client/factory/**"/>
+				<include name="com/lpmas/weixin/component/**"/>
+			</fileset>
+		</jar>
+	</target>
+	
+</project>
